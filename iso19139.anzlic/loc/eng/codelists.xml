@@ -14,6 +14,8 @@
  in local node and needs to be displayed in view mode).
  
  By default, this attribute is not used.
+
+ Modified for UOW Extended Codelists by Simon Pigot - June 2014
 -->
 <codelists xmlns:gmd="http://www.isotc211.org/2005/gmd">
 	<!-- ==================================================== -->
@@ -151,5 +153,61 @@
 			<label>Project</label>
 			<description>Information applies to a project or programme</description>
 		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<!-- new scope codes from UOW -->
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>datasetAgreement</code>
+			<label>Dataset Agreement</label>
+			<description>Information applies to a dataset agreement</description>
+		</entry>
 	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:CI_DateTypeCode">
+		<entry>
+			<code>creation</code>
+			<label>Creation</label>
+			<description>Date identifies when the resource was brought into existence</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>publication</code>
+			<label>Publication</label>
+			<description>Date identifies when the resource was issued</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>revision</code>
+			<label>Revision</label>
+			<description>Date identifies when the resource was examined or re-examined and improved or
+				amended</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<!-- new scope codes from UOW -->
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>datasetAgreementDistribution</code>
+			<label>Dataset Agreement Distribution</label>
+			<description>Date identifies when dataset agreement was distributed</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>datasetAgreementReceipt</code>
+			<label>Dataset Agreement Receipt</label>
+			<description>Date identifies when dataset agreement was received</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>datasetAgreementCompleted</code>
+			<label>Dataset Agreement Completed</label>
+			<description>Date identifies when dataset agreement was completed</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>datasetAgreementSent</code>
+			<label>Dataset Agreement Sent</label>
+			<description>Date identifies when dataset agreement was sent</description>
+		</entry>
+	</codelist>
+	<!-- ==================================================== -->
 </codelists>
