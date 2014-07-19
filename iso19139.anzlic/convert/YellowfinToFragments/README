@@ -1,0 +1,3 @@
+This directory holds xslts that convert yellowfin reports to iso19139.anzlic
+metadata fragments. The fragments are copied into the nominated iso19139 
+template to create a metadata record - one per report.
