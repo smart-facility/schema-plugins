@@ -207,5 +207,10 @@
 
 	</xsl:template>
 
+	<!-- do nothing template because we consume AdministrationPerson 
+	     elsewhere -->
+	<xsl:template match="AdministrationPerson"> 
+		<xsl:param name="uuid"/>
+	</xsl:template>
 
 </xsl:stylesheet>
