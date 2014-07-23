@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Contact Subtemplate -->
 <gmd:CI_ResponsibleParty xmlns:gmd="http://www.isotc211.org/2005/gmd"
-                         xmlns:gco="http://www.isotc211.org/2005/gco">
+                         xmlns:gco="http://www.isotc211.org/2005/gco"
+												 uuid="urn:uow:smart-metadata:users:1"
+												 title="DataManager@SMART-UOW">
+
 	<gmd:individualName gco:nilReason="withheld">
 		<gco:CharacterString>Tim Davies</gco:CharacterString>
 	</gmd:individualName>

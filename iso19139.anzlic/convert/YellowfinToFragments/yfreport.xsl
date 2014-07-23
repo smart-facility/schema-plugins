@@ -17,7 +17,7 @@
 	<xsl:template match="/root">
 		<xsl:variable name="uuid" select="@uuid"/>
 		<records>
-			<record>
+			<record uuid="{$uuid}">
 				<xsl:apply-templates select="*">
 					<xsl:with-param name="uuid" select="$uuid"/>
 				</xsl:apply-templates>

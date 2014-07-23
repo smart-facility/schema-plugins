@@ -13,7 +13,7 @@
   <gmd:hierarchyLevelName>
     <gco:CharacterString>Yellowfin report</gco:CharacterString>
   </gmd:hierarchyLevelName>
-	<gmd:contact xlink:href="http://local/subtemplate?uuid=2145df9d-687a-440c-9c80-f53abfd6d9a0&amp;process=gmd:role/gmd:CI_RoleCode/@codeListValue~author"/>
+	<gmd:contact xlink:href="local://subtemplate?uuid=urn:uow:smart-metadata:users:1&amp;process=gmd:role/gmd:CI_RoleCode/@codeListValue~author"/>
   <gmd:dateStamp>
     <gco:DateTime/>
   </gmd:dateStamp>
@@ -49,7 +49,7 @@
       <gmd:topicCategory>
         <gmd:MD_TopicCategoryCode>structure</gmd:MD_TopicCategoryCode>
       </gmd:topicCategory>
-			<gmd:pointOfContact xlink:href="http://local/subtemplate?uuid=2145df9d-687a-440c-9c80-f53abfd6d9a0&amp;process=gmd:role/gmd:CI_RoleCode/@codeListValue~pointOfContact"/>	
+			<gmd:pointOfContact xlink:href="local://subtemplate?uuid=urn:uow:smart-metadata:users:1&amp;process=gmd:role/gmd:CI_RoleCode/@codeListValue~pointOfContact"/>	
 			<gmd:descriptiveKeywords id="keywords"/>
       <gmd:extent>
         <gmd:EX_Extent id="boundingbox"/>
