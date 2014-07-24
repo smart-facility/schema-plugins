@@ -213,6 +213,33 @@
 				</gmd:onLine>
 			</fragment>
 
+			<!-- aggregation information - related reports -->
+
+			<xsl:for-each select="relatedReports/report">
+				<xsl:variable name="reportUuid" select="."/>
+				<fragment id="aggregation_info" uuid="{$reportUuid}_aggregation">
+					<gmd:aggregationInfo>
+            	<gmd:MD_AggregateInformation>
+               	<gmd:aggregateDataSetIdentifier>
+                  	<gmd:MD_Identifier>
+                     	<gmd:code>
+                        	<gco:CharacterString><xsl:value-of select="$reportUuid"/></gco:CharacterString>
+                     	</gmd:code>
+                  	</gmd:MD_Identifier>
+               	</gmd:aggregateDataSetIdentifier>
+               	<gmd:associationType>
+                  	<gmd:DS_AssociationTypeCode codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#DS_AssociationTypeCode"
+                                              	codeListValue="crossReference"/>
+               	</gmd:associationType>
+               	<gmd:initiativeType>
+                  	<gmd:DS_InitiativeTypeCode codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#DS_InitiativeTypeCode"
+                                             	codeListValue="investigation"/>
+               	</gmd:initiativeType>
+            	</gmd:MD_AggregateInformation>
+         	</gmd:aggregationInfo>		
+				</fragment>
+			</xsl:for-each>
+
 	</xsl:template>
 
 	<!-- do nothing template because we consume AdministrationPerson 

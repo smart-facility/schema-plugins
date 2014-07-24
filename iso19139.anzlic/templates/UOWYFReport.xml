@@ -41,6 +41,7 @@
         </gmd:CI_Citation>
       </gmd:citation>
       <gmd:abstract id="abstract"/>
+			<gmd:aggregationInfo id="aggregation_info"/>
       <gmd:language>
         <gco:CharacterString>eng</gco:CharacterString>
       </gmd:language>
