@@ -14,9 +14,7 @@
     <gco:CharacterString>Yellowfin report</gco:CharacterString>
   </gmd:hierarchyLevelName>
 	<gmd:contact xlink:href="local://subtemplate?uuid=urn:uow:smart-metadata:users:1&amp;process=gmd:role/gmd:CI_RoleCode/@codeListValue~author"/>
-  <gmd:dateStamp>
-    <gco:DateTime/>
-  </gmd:dateStamp>
+  <gmd:dateStamp id="dateStamp"/>
   <gmd:metadataStandardName>
     <gco:CharacterString>ANZLIC Metadata Profile: An Australian/New Zealand Profile of AS/NZS ISO 19115:2005, Geographic information - Metadata</gco:CharacterString>
   </gmd:metadataStandardName>

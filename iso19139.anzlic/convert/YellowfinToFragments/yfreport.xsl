@@ -169,6 +169,14 @@
 				</gmd:abstract>
 			</fragment>
 
+			<!-- dateStamp -->
+
+			<fragment id="dateStamp" uuid="{$uuid}_dateStamp">
+				<gmd:dateStamp>
+					<gco:DateTime><xsl:value-of select="dateStamp"/></gco:DateTime>
+				</gmd:dateStamp>
+			</fragment>
+
 			<!-- temporal extent = lifespan -->
 
 			<fragment id="tempextent" uuid="{$uuid}_tempextent">
