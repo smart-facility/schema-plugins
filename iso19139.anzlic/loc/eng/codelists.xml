@@ -283,10 +283,17 @@
 			<description>Process of testing to discover or demonstrate something</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<!-- UOW Extras -->
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
 			<code>dataset</code>
 			<label>Dataset</label>
 			<description>A dataset.</description>
+		</entry>
+		<entry>
+			<code>dataAccessAgreement</code>
+			<label>Dataset</label>
+			<description>A data access agreement.</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 	</codelist>
