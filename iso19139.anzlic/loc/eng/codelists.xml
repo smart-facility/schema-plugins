@@ -157,9 +157,9 @@
 		<!-- new scope codes from UOW -->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
-			<code>datasetAgreement</code>
-			<label>Dataset Agreement</label>
-			<description>Information applies to a dataset agreement</description>
+			<code>dataAccessAgreement</code>
+			<label>Data Access Agreement</label>
+			<description>Information applies to a data access agreement</description>
 		</entry>
 	</codelist>
 	<!-- ==================================================== -->
@@ -186,27 +186,9 @@
 		<!-- new scope codes from UOW -->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
-			<code>datasetAgreementDistribution</code>
-			<label>Dataset Agreement Distribution</label>
-			<description>Date identifies when dataset agreement was distributed</description>
-		</entry>
-		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
-			<code>datasetAgreementReceipt</code>
-			<label>Dataset Agreement Receipt</label>
-			<description>Date identifies when dataset agreement was received</description>
-		</entry>
-		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
-			<code>datasetAgreementCompleted</code>
-			<label>Dataset Agreement Completed</label>
-			<description>Date identifies when dataset agreement was completed</description>
-		</entry>
-		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
-			<code>datasetAgreementSent</code>
-			<label>Dataset Agreement Sent</label>
-			<description>Date identifies when dataset agreement was sent</description>
+			<code>dataAccessAgreementSigned</code>
+			<label>Data Access Agreement Signed</label>
+			<description>Date identifies when data access agreement was signed</description>
 		</entry>
 	</codelist>
 	<!-- ==================================================== -->

@@ -10,7 +10,7 @@
     <gmd:MD_CharacterSetCode codeListValue="utf8" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode"/>
   </gmd:characterSet>
   <gmd:hierarchyLevel>
-    <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="datasetAgreement"/>
+    <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataAccessAgreement"/>
   </gmd:hierarchyLevel>
   <gmd:hierarchyLevelName gco:nilReason="missing">
     <gco:CharacterString/>
@@ -29,7 +29,7 @@
       <gmd:citation>
         <gmd:CI_Citation>
           <gmd:title>
-            <gco:CharacterString>NEW UOW Dataset Agreement Record (ANZLIC profile v1.1)</gco:CharacterString>
+            <gco:CharacterString>NEW UOW Data Access Agreement Record (ANZLIC profile v1.1)</gco:CharacterString>
           </gmd:title>
           <gmd:date>
             <gmd:CI_Date>
@@ -37,44 +37,14 @@
                 <gco:Date/>
               </gmd:date>
               <gmd:dateType>
-                <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="datasetAgreementDistribution"/>
-              </gmd:dateType>
-            </gmd:CI_Date>
-          </gmd:date>
-          <gmd:date>
-            <gmd:CI_Date>
-              <gmd:date>
-                <gco:Date/>
-              </gmd:date>
-              <gmd:dateType>
-                <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="datasetAgreementReceipt"/>
-              </gmd:dateType>
-            </gmd:CI_Date>
-          </gmd:date>
-          <gmd:date>
-            <gmd:CI_Date>
-              <gmd:date>
-                <gco:Date/>
-              </gmd:date>
-              <gmd:dateType>
-                <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="datasetAgreementCompleted"/>
-              </gmd:dateType>
-            </gmd:CI_Date>
-          </gmd:date>
-          <gmd:date>
-            <gmd:CI_Date>
-              <gmd:date>
-                <gco:Date/>
-              </gmd:date>
-              <gmd:dateType>
-                <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="datasetAgreementSent"/>
+                <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="dateSigned"/>
               </gmd:dateType>
             </gmd:CI_Date>
           </gmd:date>
         </gmd:CI_Citation>
       </gmd:citation>
       <gmd:abstract>
-        <gco:CharacterString>-- Short description of dataset agreement --</gco:CharacterString>
+        <gco:CharacterString>-- Short description of data access agreement --</gco:CharacterString>
       </gmd:abstract>
       <gmd:language>
         <gco:CharacterString>eng</gco:CharacterString>
@@ -83,7 +53,7 @@
         <gmd:MD_TopicCategoryCode>structure</gmd:MD_TopicCategoryCode>
       </gmd:topicCategory>
 			<gmd:supplementalInformation>
-        <gco:CharacterString>-- Notes on dataset agreement --</gco:CharacterString>
+        <gco:CharacterString>-- Notes on data access agreement --</gco:CharacterString>
 			</gmd:supplementalInformation>
     </gmd:MD_DataIdentification>
   </gmd:identificationInfo>
@@ -103,7 +73,7 @@
                         <gco:CharacterString/>
                      </gmd:name>
                      <gmd:description>
-                        <gco:CharacterString>Link to Dataset Agreement (URL)</gco:CharacterString>
+                        <gco:CharacterString>Link to Data Access Agreement (URL)</gco:CharacterString>
                      </gmd:description>
                   </gmd:CI_OnlineResource>
                </gmd:onLine>
