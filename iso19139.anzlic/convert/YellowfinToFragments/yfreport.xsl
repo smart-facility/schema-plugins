@@ -75,6 +75,7 @@
 
 		<!-- keywords - column names as data parameter names -->
 
+		<replacementGroup id="keywords">
 			<fragment id="keywords" uuid="{$uuid}_keywords">
 				<gmd:descriptiveKeywords>
 					<gmd:MD_Keywords>
@@ -106,6 +107,7 @@
 					</gmd:MD_Keywords>
 				</gmd:descriptiveKeywords>
 			</fragment>
+		</replacementGroup>
 	</xsl:template>
 
 	<xsl:template match="AdministrationReport">
