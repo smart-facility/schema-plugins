@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" 
+            xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+
 	<!-- RNDT SCHEMATRON-->
-	<sch:title xmlns="http://www.w3.org/2001/XMLSchema">Schematron validation for ISO
-		19115(19139) RNDT Profile</sch:title>
+	<sch:title xmlns="http://www.w3.org/2001/XMLSchema">Schematron validation for ISO 19115(19139) RNDT Profile</sch:title>
 	<sch:ns prefix="gml" uri="http://www.opengis.net/gml"/>
 	<sch:ns prefix="gmd" uri="http://www.isotc211.org/2005/gmd"/>
 	<sch:ns prefix="srv" uri="http://www.isotc211.org/2005/srv"/>
@@ -179,7 +180,7 @@ temporalSamplingService;temporalProximityAnalysisService;metadataProcessingServi
 		<sch:title>$loc/strings/M13</sch:title>
 		<sch:rule context="//gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation
 		|//gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation">
-			<sch:assert test="gmd:identifier/gmd:RS_Identifier/gmd:code/gco:CharacterString">$loc/strings/alert.M13</sch:assert>
+			<sch:assert test="gmd:identifier/*/gmd:code/gco:CharacterString">$loc/strings/alert.M13</sch:assert>
 		</sch:rule>
 	</sch:pattern>
 	<!--DATA/SERVICE IDENTIFICATION - SERIES-->
@@ -189,18 +190,23 @@ temporalSamplingService;temporalProximityAnalysisService;metadataProcessingServi
 			<sch:assert test="gmd:series/gmd:CI_Series/gmd:issueIdentification/gco:CharacterString">$loc/strings/alert.M14</sch:assert>
 		</sch:rule>
 	</sch:pattern>
-	<!--DATA/SERVICE IDENTIFICATION - DATASET RESPONSIBLE PARTY-->
-	<sch:pattern>
-		<sch:title>$loc/strings/M15</sch:title>
-		<sch:rule context="//gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty
-		                  |//gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty">
 
-            <sch:assert test="gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString!=''">$loc/strings/alert.M15org</sch:assert>
-            <sch:assert test="gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode/@codeListValue!=''">$loc/strings/alert.M15poc</sch:assert>
-            <sch:assert test="gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gco:CharacterString!=''">$loc/strings/alert.M15mail</sch:assert>
-            <sch:assert test="gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:phone/gmd:CI_Telephone/gmd:voice/gco:CharacterString!=''
-                           or gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL!=''">$loc/strings/alert.M15phone</sch:assert>
-		</sch:rule>
+        <!--DATA/SERVICE IDENTIFICATION - DATASET RESPONSIBLE PARTY-->
+        <sch:pattern>
+            <sch:title>$loc/strings/M15</sch:title>
+
+            <sch:rule context="//gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation">
+                <sch:assert test="gmd:citedResponsibleParty">$loc/strings/alert.M15missing</sch:assert>
+            </sch:rule>
+
+            <sch:rule context="//gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty">
+                <sch:assert test="gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString!=''">$loc/strings/alert.M15org</sch:assert>
+                <sch:assert test="gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode/@codeListValue!=''">$loc/strings/alert.M15poc</sch:assert>
+                <sch:assert test="gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gco:CharacterString!=''">$loc/strings/alert.M15mail</sch:assert>
+                <sch:assert test="gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:phone/gmd:CI_Telephone/gmd:voice/gco:CharacterString!=''
+                               or gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL!=''">$loc/strings/alert.M15phone</sch:assert>
+            </sch:rule>
+
 	</sch:pattern>
 	<!--DATA/SERVICE IDENTIFICATION - PRESENTATION FORM-->
 	<sch:pattern>
@@ -230,13 +236,13 @@ temporalSamplingService;temporalProximityAnalysisService;metadataProcessingServi
 	<sch:pattern>
 		<sch:title>$loc/strings/M33</sch:title>
 		<sch:rule context="//gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification
-		|//gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification">
-			<sch:assert test="count(./srv:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox)>0 
-			or
-			count(./gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox)>0">$loc/strings/alert.M33</sch:assert>
-			<sch:assert test="count(./srv:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox)&lt;2
-			or
-			count(./gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox)&lt;2">$loc/strings/alert.M33a</sch:assert>
+                                  |//gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification">
+                    <sch:assert test="count(./srv:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox)>0
+			              or
+			              count(./gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox)>0">$loc/strings/alert.M33</sch:assert>
+                    <sch:assert test="count(./srv:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox)&lt;2
+			              or
+			              count(./gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox)&lt;2">$loc/strings/alert.M33a</sch:assert>
 		</sch:rule>
 	</sch:pattern>
 	<!--DATA/SERVICE QUALITY - SCOPE-->
@@ -313,7 +319,8 @@ temporalSamplingService;temporalProximityAnalysisService;metadataProcessingServi
 			<sch:let name="rndtparsed" value="exists(tokenize($rslist, ';')[. = $rscode])"/>
 			<sch:let name="epsgparsed" value="$rscode castable as xs:double"/>
 
-			<sch:let name="isepsgspace"  value="gmd:codeSpace/gco:CharacterString= 'http://www.epsg-registry.org'"/>
+			<sch:let name="isepsgspace"  value="string(gmd:codeSpace/gco:CharacterString) = 'http://www.epsg-registry.org' or
+			                                    string(gmd:codeSpace/gco:CharacterString) = 'http://www.epsg-registry.org/'"/>
 			<sch:let name="isnospace"  value="not(gmd:codeSpace)"/>
 
 			<sch:assert test="($isnospace and $rndtparsed) or ($isepsgspace and $epsgparsed)">
@@ -374,9 +381,7 @@ temporalSamplingService;temporalProximityAnalysisService;metadataProcessingServi
 			and gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gco:CharacterString!=''"/>
 			<sch:let name="phone" value="gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:phone/gmd:CI_Telephone/gmd:voice/gco:CharacterString
 			and gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact//gmd:phone/gmd:CI_Telephone/gmd:voice/gco:CharacterString!=''"/>
-			<sch:let name="role" value="gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode/@codeListValue
-			and gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode/@codeListValue='distributor'"/>
-			<sch:assert test="$name and $role and $mail and ($url or $phone)">$loc/strings/alert.M46</sch:assert>			
+			<sch:assert test="$name and $mail and ($url or $phone)">$loc/strings/alert.M46</sch:assert>			
 		</sch:rule>
 	</sch:pattern>
 
@@ -502,7 +507,7 @@ temporalSamplingService;temporalProximityAnalysisService;metadataProcessingServi
 		<sch:title>$loc/strings/M101</sch:title>
 		<sch:rule context="gmd:parentIdentifier[.!='']|gmd:fileIdentifier|
 		/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:series/gmd:CI_Series/gmd:issueIdentification|
-		/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier/gmd:RS_Identifier/gmd:code">
+		/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier/*/gmd:code">
 			<sch:assert test="contains(gco:CharacterString,':')">$loc/strings/alert.M101</sch:assert>
 		</sch:rule>
 			</sch:pattern>
@@ -514,11 +519,10 @@ temporalSamplingService;temporalProximityAnalysisService;metadataProcessingServi
 		</sch:rule>
 	</sch:pattern>
 	<!--COD IPA - IDENTIFIER-->
-	/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier/gmd:RS_Identifier/gmd:code/gco:CharacterString
 	<sch:pattern>
 		<sch:title>$loc/strings/M103</sch:title>
-		<sch:rule context="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier/gmd:RS_Identifier/gmd:code[contains(../../../../../../../gmd:fileIdentifier/gco:CharacterString,':')]|
-		                   /gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier/gmd:RS_Identifier/gmd:code[contains(../../../../../../../gmd:fileIdentifier/gco:CharacterString,':')]">
+		<sch:rule context="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier/*/gmd:code[contains(../../../../../../../gmd:fileIdentifier/gco:CharacterString,':')]|
+		                   /gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier/*/gmd:code[contains(../../../../../../../gmd:fileIdentifier/gco:CharacterString,':')]">
 			<sch:assert test="starts-with(gco:CharacterString,substring-before(../../../../../../../gmd:fileIdentifier/gco:CharacterString,':'))">$loc/strings/alert.M103</sch:assert>
 		</sch:rule>
 	</sch:pattern>
@@ -544,7 +548,18 @@ temporalSamplingService;temporalProximityAnalysisService;metadataProcessingServi
 			<sch:assert test="(@xlink:href != '')">$loc/strings/alert.M112</sch:assert>
 		</sch:rule>
 	</sch:pattern>
-
+	
+	<!-- OPERAZIONI CONTENUTE -->
+	<sch:pattern>
+		<sch:title>$loc/strings/M121</sch:title>
+		<sch:rule context="//srv:SV_OperationMetadata/srv:operationName">
+			<sch:let name="elementName" value="local-name()"/>
+			<sch:assert test="gco:CharacterString!=''">
+                <sch:value-of select="$loc/strings/alert.M121"/>
+            </sch:assert>
+		</sch:rule>
+	</sch:pattern>
+	
 	<sch:pattern>
 		<sch:title>$loc/strings/M120</sch:title>
 		<sch:rule context="//gmd:MD_Metadata//*[@codeListValue]">
